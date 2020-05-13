@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b1023a94c5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body class="text-white bg-blue-200 h-full">
+    <header>
+        <h2 class="text-4xl"> To do list</h2>
+    </header>
+    <form>
+        <input class="todo-input text-black" type="text">
+        <button class="hover:text-blue-400 transition-all duration-300 ease todo-button" type="submit">
+       <i class="fa fa-plus-square"></i>
+        </button>
+    </form>
+    <div class="todo-container">
+        <ul class="todo-list">
+        </ul>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html> 
