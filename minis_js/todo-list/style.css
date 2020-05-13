@@ -1,4 +1,9 @@
 
+body {
+    background: linear-gradient(to left, #3D72D6, #01D6FF);
+    color: white;
+}
+
 header,
 form {
     min-height: 20vh;
@@ -6,3 +11,50 @@ form {
     justify-content: center;
     align-items: center;
 }
+
+form input,
+form button {
+    padding: 0.7rem;
+    font-size: 1rem;
+    border: none;
+    background: white;
+
+}
+
+form button {
+    color: #3d73d6;
+}
+
+.fa-trash ,
+.fa-check {
+  pointer-events: none;
+  padding: 0.7rem;
+}
+
+.completed {
+   text-decoration: line-through;
+   opacity: 0.5;
+}
+
+.todo-list {
+    width: 55%;
+}
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.2rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.todo-item {
+    list-style: none;
+    flex: 1;
+    padding: 0.7rem;
+}
+
+
