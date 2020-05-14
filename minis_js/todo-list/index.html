@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/b1023a94c5.js" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -14,10 +14,17 @@
         <h2 class="text-4xl"> To do list</h2>
     </header>
     <form>
-        <input class="todo-input text-black" type="text">
-        <button class="hover:text-blue-400 transition-all duration-300 ease todo-button" type="submit">
-       <i class="fa fa-plus-square"></i>
+        <input class="focus:outline-none todo-input text-black" type="text">
+        <button class="border-none focus:outline-none hover:text-blue-400  transition-all duration-300 ease todo-button" type="submit">
+       <i class=" fa fa-plus-square"></i>
         </button>
+        <div class="select">
+           <select name="todos" class="filter-todo">
+              <option value="All">All</option>
+              <option value="Completed">Completed</option>
+              <option value="Incomplete">Incomplete</option>
+           </select>
+        </div>
     </form>
     <div class="todo-container">
         <ul class="todo-list">
