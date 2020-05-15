@@ -57,19 +57,28 @@ function deleteCheck(e){
   }
 }
 //Filter select
-function filterTodo(e){
-   const todos = todoList.childNodes;
-   todos.forEach(function(todo){
-switch(e.target.value){
-   case "All" : 
-   todo.style.display = 'block';
-   break;
-   case "Completed" :
-    if (todo.classList.contains('completed')){
-   todo.style.display = 'flex';
-   } else {
-      todo.style.display = 'none';
+
+function filterTodo (e) {
+    const todos = todoList.children
+   //  convert todos into array to use foreach
+    const children = Array.from(todos);
+   children.forEach(todo => {
+      switch(e.target.value){
+         case "all" : 
+           todo.style.display = "flex"
+        break;
+        case "completed" : if (todo.classList.contains("completed")){
+         todo.style.display = "flex"
+        } else {
+         todo.style.display = "none"
+        }
+        break;
+        case "incomplete" : if(!todo.classList.contains("completed")){
+         todo.style.display = "flex"
+        } else {
+         todo.style.display = "none"
+
+        }
+      }
+   })
    }
-}
-   });
-}
