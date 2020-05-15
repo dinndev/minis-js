@@ -37,6 +37,11 @@ function addTodo (e) {
     todoList.appendChild(todoDiv);
 // clear the input value
    todoInput.value = ""
+   //LOCAL STORAGE
+   let itemsArray = []
+localStorage.setItem( "todos" , JSON.stringify(newTodo));
+ const todos = JSON.parse(localStorage.getItem("todos"));
+  
 }
 
 //checking if its delete or check
