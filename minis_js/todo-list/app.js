@@ -5,6 +5,7 @@ const todoList = document.querySelector('.todo-list');
 const filterOption  = document.querySelector('.filter-todo');
 const clearBtn = document.querySelector('.clear-btn');
 // EVENTS
+document.addEventListener('DOMContentLoaded' ,getTodo);
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click' ,deleteCheck);
 filterOption.addEventListener('click', filterTodo);
@@ -23,6 +24,8 @@ function addTodo (e) {
    newTodo.classList.add("todo-item");
    newTodo.textContent = todoInput.value
    todoDiv.appendChild(newTodo);
+   // set local storage
+  saveLocalTodos(todoInput.value)
  // create a checkmark button
    const completeButton = document.createElement('button');
    completeButton.innerHTML = '<li class="fa fa-check"> </li>'
@@ -35,14 +38,10 @@ function addTodo (e) {
     todoDiv.appendChild(trashButton);
  //append the todoDiv to ul
     todoList.appendChild(todoDiv);
-// clear the input value
+   // clear the input value
    todoInput.value = ""
-   //LOCAL STORAGE
-   let itemsArray = []
-localStorage.setItem( "todos" , JSON.stringify(newTodo));
- const todos = JSON.parse(localStorage.getItem("todos"));
-  
-}
+
+   }
 
 //checking if its delete or check
 function deleteCheck(e){
@@ -89,11 +88,38 @@ function filterTodo (e) {
    })
    }
 function clearTodo(e) {
-   // prevent page from reloading because of submit
+   // prevent page from reloading
    e.preventDefault()
    const todos = todoList.children
    const children = Array.from(todos);
    children.forEach(todo => {
       todo.remove()
    })
+}
+function saveLocalTodos(todo) {
+  let todos;
+//check if the local storage have a content
+  if(localStorage.getItem("todos") === null){
+      todos = [];
+  } else {
+      todos = JSON.parse(localStorage.getItem('todos'));
+  }
+  todos.push(todo);
+  localStorage.setItem("todos" , JSON.stringify(todos))
+} 
+
+function getTodo (todo){
+   console.log("hello");
+   let todos;
+   //check if the local storage have a content
+     if(localStorage.getItem("todos") === null){
+         todos = [];
+     } else {
+         todos = JSON.parse(localStorage.getItem('todos'));
+     }
+     todos.push(todo);
+     localStorage.setItem("todos" , JSON.stringify(todos))l
+     todos.forEach(todo => {
+        
+     })
 }
