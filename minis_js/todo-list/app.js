@@ -8,7 +8,7 @@ const clearBtn = document.querySelector('.clear-btn');
 document.addEventListener('DOMContentLoaded' ,getTodo);
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click' ,deleteCheck);
-filterOption.addEventListener('click', filterTodo);
+filterOption.addEventListener('input', filterTodo);
 clearBtn.addEventListener('click', clearTodo);
 
 
@@ -94,7 +94,7 @@ function clearTodo(e) {
    const todos = todoList.children
    const children = Array.from(todos);
    children.forEach(todo => {
-      localStorage.removeItem("todos")
+      localStorage.removeItem("todos");
       todo.remove()
    })
 }
