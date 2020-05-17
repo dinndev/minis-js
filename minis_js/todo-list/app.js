@@ -94,6 +94,7 @@ function clearTodo(e) {
    const todos = todoList.children
    const children = Array.from(todos);
    children.forEach(todo => {
+      localStorage.removeItem("todos")
       todo.remove()
    })
 }
