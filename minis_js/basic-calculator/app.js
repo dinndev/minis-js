@@ -21,7 +21,8 @@ class Calculator {
     this.currentOperand = this.currentOperand.toString() + number.toString();
     } 
    chooseOperation(operation){
-       if(this.currentOperand === '')return
+       if(this.currentOperand === '')return;
+
     this.operation = operation;
     this.previousOperand = this.currentOperand;
     this.previousOperand = this.currentOperand + operation;
@@ -29,8 +30,8 @@ class Calculator {
 
    }
 
-   compute(){
-
+   compute(){ 
+       
    }
 
    updateDisplay(){
@@ -72,4 +73,10 @@ operationButtons.forEach(button => {
         calculator.updateDisplay();
     });
 });
+
+allClearButton.addEventListener('click',_=> {
+    calculator.clear();
+    calculator.updateDisplay();
+    console.log("hi");
+})
 
