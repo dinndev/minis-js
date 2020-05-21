@@ -22,16 +22,37 @@ class Calculator {
     } 
    chooseOperation(operation){
        if(this.currentOperand === '')return;
-
+       if(this.previousOperand !== ''){
+           this.compute;
+       }
     this.operation = operation;
-    this.previousOperand = this.currentOperand;
     this.previousOperand = this.currentOperand + operation;
-    this.currentOperand = ''
+    this.currentOperand = '';
 
    }
 
    compute(){ 
-       
+    let computation ;
+    const current = parseFloat(this.currentOperand) ;
+    const prev = parseFloat(this.previousOperand);
+    if(isNaN(current) || isNaN(prev)) return;
+    switch(this.operation){
+    case '+' : 
+    computation = current + prev ;
+    break;
+    case '-' : 
+    computation = current - prev ;
+    break;
+    case '*' : 
+    computation = current * prev ;
+    break;
+    case '÷' : 
+    computation = current / prev ;
+    break;
+    default : return
+    }
+    this.currentOperand = computation;
+    this.previousOperand = ''
    }
 
    updateDisplay(){
@@ -78,5 +99,11 @@ allClearButton.addEventListener('click',_=> {
     calculator.clear();
     calculator.updateDisplay();
     console.log("hi");
+});
+
+equallsButton.addEventListener('click',_=> {
+    calculator.compute()
+    calculator.updateDisplay()
+    console.log("hi")
 })
 
