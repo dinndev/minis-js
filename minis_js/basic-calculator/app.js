@@ -12,13 +12,15 @@ class Calculator {
     } 
 
     delete(){
-   
+    this.currentOperand = this.currentOperand.toString().slice(0 , -1); 
     }
 
     appendNumber(number){
         //check if theres a point already
         if(number === '.' && this.currentOperand.includes('.'))return
     this.currentOperand = this.currentOperand.toString() + number.toString();
+       
+
     } 
    chooseOperation(operation){
        if(this.currentOperand === '')return;
@@ -49,10 +51,11 @@ class Calculator {
     case '÷' : 
     computation = current / prev ;
     break;
-    default : return
+    default : return; 
     }
-    this.currentOperand = computation;
-    this.previousOperand = ''
+    // this.operation = undefined;
+        this.currentOperand = computation;
+        this.previousOperand = '';
    }
 
    updateDisplay(){
@@ -61,10 +64,6 @@ class Calculator {
       this.previousOperandTextElement.innerText = this.previousOperand;
    }
 }
-
-
-
-
 
 
 // SELECTOR
@@ -77,7 +76,7 @@ const currentOperandTextElement = document.querySelector('[data-current-operand]
 const deleteBtn = document.querySelector('[data-delete]'); 
 
 
-const calculator = new Calculator( currentOperandTextElement , previousOperandTextElement);
+const calculator = new Calculator(currentOperandTextElement , previousOperandTextElement);
 
 //click event for number buttons
 numberButtons.forEach(button => {
@@ -98,12 +97,17 @@ operationButtons.forEach(button => {
 allClearButton.addEventListener('click',_=> {
     calculator.clear();
     calculator.updateDisplay();
-    console.log("hi");
 });
 
-equallsButton.addEventListener('click',_=> {
-    calculator.compute()
-    calculator.updateDisplay()
-    console.log("hi")
-})
 
+equallsButton.addEventListener('click',_=> {
+    calculator.compute();
+    calculator.updateDisplay();
+});
+
+
+
+deleteBtn.addEventListener('click',_=> {
+    calculator.delete();
+   calculator.updateDisplay();
+})
