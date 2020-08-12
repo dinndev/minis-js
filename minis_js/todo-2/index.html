@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">Get Items</button>
+    <script>
+        const loadData = _ => {
+     const xhr = new XMLHttpRequest() ;
+ xhr.open('GET' ,'test.txt',true);
+ xhr.onreadystatechange = _ => {
+     if(xhr.status == 200 && xhr.readyState === 4){
+        const text = JSON.parse(xhr.responseText);
+        const value = `
+          hi im ${text.name} and ${text.facebook} in facebook my id number
+          is ${text.id} you might wanna see me in my office at ${text.address}
+        `
+        document.body.textContent = value;
+     } 
+ }
+
+ xhr.send();
+
+
+  xhr.onreadystatechange()
+}
+document.querySelector('.btn').addEventListener('click',loadData);
+
+    </script>
+</body>
+</html>

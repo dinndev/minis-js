@@ -11,7 +11,7 @@ const clear = document.querySelector('.clear');
 // Events
 button.addEventListener('click', createList);
 clear.addEventListener('click' ,clearBtn)
-
+document.addEventListener('DOMContentLoaded' , getTodo)
 
 // Functions
 function createList(e){
@@ -22,15 +22,41 @@ function createList(e){
     li.innerHTML = val 
      ul.appendChild(li); //append the li to our ul
      todoContainer.appendChild(ul);
+     saveLocalTodos(val);
      input.value = ""
 }
+function saveLocalTodos(todo) {
+    let todos;
+   if(localStorage.getItem('todos') == null) {
+        todos = []
+   } else {
+    todos = JSON.parse(localStorage.getItem('todos'));
+   }
+   todos.push(todo);
+   localStorage.setItem('todos', JSON.stringify(todos));
+}
+// ClearTodo
+  function getTodo() {
+      let todos;
+     if(localStorage.getItem('todos') === null) {
+       todos = []
+     } else {
+        todos = localStorage.getItem(JSON.parse('todos'));
+     }
+     localStorage.setItem('todos' ,JSON.stringify(todos));
+   
+}
+
+// ClearBtn 
 function clearBtn(){ 
    const todos = Array.from(ul.children);
+   localStorage.removeItem('todos')
     todos.forEach(todo => {
         todo.classList.add('fade');
-     todo.addEventListener('transitionend', _=> todo.remove());
+     todo.addEventListener('transitionend', _=> {
+        todo.remove()
+     });
     })
-
  }
 
 
