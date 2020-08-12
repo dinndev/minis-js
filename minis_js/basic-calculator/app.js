@@ -5,12 +5,13 @@ class Calculator {
        this.previousOperandTextElement = previousOperandTextElement;
        this.clear();
     }
+    //used as variables
     clear(){
       this.currentOperand = '';
       this.previousOperand = '';
       this.operation = undefined;  
     } 
-
+    // deleting the last of the index
     delete(){
     this.currentOperand = this.currentOperand.toString().slice(0 , -1); 
     }
@@ -18,6 +19,7 @@ class Calculator {
     appendNumber(number){
         //check if theres a point already
         if(number === '.' && this.currentOperand.includes('.'))return
+        //append the number or concatinating it instead 
     this.currentOperand = this.currentOperand.toString() + number.toString();
        
 
@@ -28,6 +30,7 @@ class Calculator {
            this.compute;
        }
     this.operation = operation;
+    // showing the status on previousOperand 
     this.previousOperand = this.currentOperand + operation;
     this.currentOperand = '';
 
@@ -38,6 +41,7 @@ class Calculator {
     const current = parseFloat(this.currentOperand) ;
     const prev = parseFloat(this.previousOperand);
     if(isNaN(current) || isNaN(prev)) return;
+    // choose operation button
     switch(this.operation){
     case '+' : 
     computation = current + prev ;
@@ -56,6 +60,9 @@ class Calculator {
     // this.operation = undefined;
         this.currentOperand = computation;
         this.previousOperand = '';
+        if(computation !== ''){
+              
+        }
    }
 
    updateDisplay(){
@@ -94,6 +101,7 @@ operationButtons.forEach(button => {
     });
 });
 
+// clearing the calculator
 allClearButton.addEventListener('click',_=> {
     calculator.clear();
     calculator.updateDisplay();
@@ -104,8 +112,6 @@ equallsButton.addEventListener('click',_=> {
     calculator.compute();
     calculator.updateDisplay();
 });
-
-
 
 deleteBtn.addEventListener('click',_=> {
     calculator.delete();

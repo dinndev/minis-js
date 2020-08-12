@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     display: flex;
     align-items: center;
@@ -16,6 +17,12 @@ body {
     overflow: hidden;
     flex-direction: column;
     margin: 0%;
+}
+
+h2 {
+    color: black; 
+    font-size: 2em;
+    margin-top: 1em;
 }
 .container {
     width: 300px;

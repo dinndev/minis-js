@@ -12,11 +12,11 @@ function breathAnimation(){
   container.className = "container grow"
    setTimeout(_=> {
        text.innerText = 'Hold'
-       setTimeout(_=> {
+       setTimeout( _=> {
+           container.className = "container shrink"
          text.innerText = 'Breath out'
        },holdTime)
    },breatheTime)
-  
 }
 
 
