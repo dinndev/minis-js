@@ -36,15 +36,21 @@ function saveLocalTodos(todo) {
    localStorage.setItem('todos', JSON.stringify(todos));
 }
 // ClearTodo
-  function getTodo() {
+  function getTodo(e) {
       let todos;
      if(localStorage.getItem('todos') === null) {
        todos = []
      } else {
-        todos = localStorage.getItem(JSON.parse('todos'));
+        todos = JSON.parse(localStorage.getItem('todos'));
      }
-     localStorage.setItem('todos' ,JSON.stringify(todos));
-   
+     todos.forEach(todo => {
+      e.preventDefault()
+      const li = document.createElement('li'); //create a lists
+      li.classList.add('lists')
+      li.innerHTML = todo
+       ul.appendChild(li); //append the li to our ul
+       todoContainer.appendChild(ul);
+     })
 }
 
 // ClearBtn 
