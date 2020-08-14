@@ -7,7 +7,7 @@ const ul = document.createElement('ul');
 const div = document.querySelector('.ulList');
 const todoContainer = document.querySelector('.todo-container');
 const clear = document.querySelector('.clear');
-
+const alert = document.querySelector('.alert');
 // Events
 button.addEventListener('click', createList);
 clear.addEventListener('click' ,clearBtn)
@@ -19,12 +19,17 @@ function createList(e){
     const li = document.createElement('li'); //create a lists
     li.classList.add('lists')
     let val = input.value //value of input
-    li.innerHTML = val 
+    if(val === ""){
+      return alerts()
+    } else {
+     li.innerText = val
+    }
      ul.appendChild(li); //append the li to our ul
      todoContainer.appendChild(ul);
      saveLocalTodos(val);
      input.value = ""
 }
+// save the todos to local storage
 function saveLocalTodos(todo) {
     let todos;
    if(localStorage.getItem('todos') == null) {
@@ -63,6 +68,14 @@ function clearBtn(){
         todo.remove()
      });
     })
+ }
+
+ function alerts(){
+    alert.classList.add('active');
+    setTimeout(_=> {
+      alert.classList.remove('active');
+    },2000);
+    
  }
 
 
