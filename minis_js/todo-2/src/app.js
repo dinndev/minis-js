@@ -8,6 +8,8 @@ const div = document.querySelector('.ulList');
 const todoContainer = document.querySelector('.todo-container');
 const clear = document.querySelector('.clear');
 const alert = document.querySelector('.alert');
+let color;
+let text;
 // Events
 button.addEventListener('click', createList);
 clear.addEventListener('click' ,clearBtn)
@@ -20,8 +22,13 @@ function createList(e){
     li.classList.add('lists')
     let val = input.value //value of input
     if(val === ""){
-      return alerts()
+       text = 'Add something'
+       color = 'red'
+      return alerts(color , text);
     } else {
+      text = 'Todo added'
+       color = '#56C368'
+       alerts(color ,text)
      li.innerText = val
     }
      ul.appendChild(li); //append the li to our ul
@@ -70,12 +77,11 @@ function clearBtn(){
     })
  }
 
- function alerts(){
+ function alerts(color , text){
+    alert.style.backgroundColor = color
+    alert.innerText = text
     alert.classList.add('active');
-    setTimeout(_=> {
-      alert.classList.remove('active');
-    },2000);
-    
+    alert.addEventListener('transitionend', _=> alert.classList.remove('active'))
  }
 
 
