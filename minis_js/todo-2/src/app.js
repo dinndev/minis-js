@@ -76,12 +76,13 @@ function clearBtn(){
      });
     })
  }
+//  Alert
 
  function alerts(color , text){
     alert.style.backgroundColor = color
     alert.innerText = text
     alert.classList.add('active');
-    alert.addEventListener('transitionend', _=> alert.classList.remove('active'))
+    alert.addEventListener('transitionend', _=> alert.classList.remove('active')) // wait for the transition and remove the alert
  }
 
 
