@@ -17,7 +17,7 @@ form {
     display: flex;
     flex-direction: column;
     background-color: white;
-    width: 90%;
+    width: 70%;
     padding: 1.5rem;
     height: 25%;
     border-top-right-radius: 10px;
@@ -60,12 +60,12 @@ h2 {
     display: flex;
     justify-content: space-between;
     /* margin: 0rem 2rem; */
-    margin: 2rem 1rem 0 0 ;
+    margin: 1rem 1rem 0 0 ;
     width: 100%;
 }
 .ulList {
     background: #f4f4f4;
-    width: 90%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -93,4 +93,23 @@ h2 {
 }
 .todo-container {
     margin-top: 2rem;
+}
+.alert {
+  background-color: #FF4B4B;
+  width: 20%;
+  color: white;
+  margin-top: .9em;
+ text-align: center;
+ border-radius: 7px;
+ padding-top: .3em ;
+ height: 2.1em;
+ font-family: 'Raleway', sans-serif;
+ font-size: .5rem;
+/* display: none; */
+opacity: 0;
+transition: opacity .5s;
+}
+
+ .active {
+    opacity: 1;
 }
