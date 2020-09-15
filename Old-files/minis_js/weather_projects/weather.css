@@ -1,0 +1,75 @@
+*{
+padding: 0px;
+margin:0px;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(rgb(80,200,180), rgb(160,246,252));
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    color: black;
+} 
+.timezone ,.temperature{
+    height: 30vh;
+    display: flex;
+    width: 50vh;
+    align-items: center;
+    justify-content: space-around;
+}
+.degrees-section{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.temperature{
+    display: flex;
+    flex-direction: column;
+}
+.degrees-section span{
+    font-size: 20px;
+}
+.timezone h1 {
+    font-size: 30px;
+}
+.temperature-discription { 
+    font-size: 20px;
+}
+.timezone canvas {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.form-control{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+.latitude{
+    width: 50vh;
+    height: 3vh;
+    margin-bottom: 20px;
+}
+.longitude{
+    width: 50vh;
+    height: 3vh; 
+    margin-bottom: 20px;
+
+}
+.btn{
+    background-color: #053e6b;
+    color: white;
+    padding: 7px;
+     border-radius: 4px;
+     border: none;
+}
+
+
+
+

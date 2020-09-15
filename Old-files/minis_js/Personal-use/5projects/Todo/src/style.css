@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #E5E5E5;
+}
+
+li .lists , .fade {
+  transform: translateY(50%);
+  transition: all 0.3s;
+ opacity: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 70%;
+    padding: 1.5rem;
+    height: 25%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    /* border-radius: .5rem; */
+}
+
+input {
+    background: rgba(94, 219, 121, 0.3);
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    width: 82%;
+    outline: none
+ }
+button {
+   border: none;
+   background: none;
+   outline: none;
+   cursor: pointer
+
+}
+h2 { 
+    font-family: 'Montserrat', sans-serif;
+}
+.main {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    align-items: center;
+    /* flex: 1; */
+    height: 100vh;
+}
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    /* margin: 0rem 2rem; */
+    margin: 1rem 1rem 0 0 ;
+    width: 100%;
+}
+.ulList {
+    background: #f4f4f4;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+     min-height: 60%;
+}
+.lists {
+    list-style: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: .8em;
+    padding: 1.3em .7rem;
+    background-color:  white;
+    border-radius: .5rem;
+    margin: .8em 1.6em;
+    
+}
+.button-container {
+position: absolute;
+ right:  20px;
+ top: 10px;
+}
+.clear {
+    cursor: pointer;
+}
+.check {
+    cursor: pointer;
+    margin-right: 1em;
+}
+.todo-container {
+    margin-top: 2rem;
+}
+.alert {
+  background-color: #FF4B4B;
+  width: 20%;
+  color: white;
+  margin-top: .9em;
+ text-align: center;
+ border-radius: 7px;
+ padding-top: .3em ;
+ height: 2.1em;
+ font-family: 'Raleway', sans-serif;
+ font-size: .5rem;
+/* display: none; */
+opacity: 0;
+transition: opacity .8s;
+}
+
+ .active {
+    opacity: 1;
+}
+.checked {
+    opacity: 0.5;
+    text-decoration: line-through;
+    transition: all 0.5s;
+}
