@@ -17,7 +17,6 @@ class Expence {
      date,
      amount;
      const row = document.createElement('tr');
-     const delBtn = document.createElement('td');
       inputs.forEach(el => {
         if(el.value === '')return
           switch(el.dataset.key){ //check for the data key and get individual val
@@ -32,26 +31,24 @@ class Expence {
           <td>${name}</td>
           <td>${date}</td>
           <td>${amount}</td>
+          <td>X</td> 
           `
           el.value = '' //emptying the value
           return table.appendChild(row);
       });
-    //Attach delete button to our row
-      delBtn.innerHTML = `X`
-     delBtn.style.cursor = 'pointer';
-      row.appendChild(delBtn);
+        // iterating to children of tr and removing its parent element
      Array.from(row.children).forEach(el => {
-        if(el.innerHTML.includes('X')){
-            el.addEventListener('click' ,_=> {
-                el.parentElement.remove();
-            })
-        }
-     })
+      if(el.innerHTML.includes('X')){
+          el.addEventListener('click' ,_=> {
+              el.parentElement.remove();
+          })
+      }
+   })
    }
 }
 
-// Instance
-const test = new Expence(inputs);
 
+// Validate
+const test = new Expence(inputs);
 // Events
-button.addEventListener('click' ,Expence.addExpence)
+button.addEventListener('click',Expence.addExpence)
