@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body class="overflow-hidden">
+    <header>
+         <div class="mt-5 lg:mt-6 lg:ml-6 logo-container flex justify-center sm:justify-start items-center">
+        <img class="mr-3 sm:ml-5 md:h-12 h-10" src="./Svg/Logo.svg" alt="logo">
+        <h2 style="font-family: Montserrat;" class="title sm:text-1xl md:text-2xl text-lg mr-5">Covid tracker</h2>
+    </div>
+        <div class="form-container mt-10 flex justify-center right-10">
+            <form class="flex items-center justify-center mt-8 w-full">
+                <input class="country-input rounded-l-lg text-xs px-8 outline-none py-3 ml-5 " style="background-color: #EDF4F7;" name="country" type="text" placeholder="Country">
+                <button class="submit py-3 px-4 rounded-r-lg text-xs mr-5" style="font-family: Montserrat; background-color: #A3F0DD;" type="submit">Search</button>
+            </form>
+        </div>
+        </header>
+        <div class="discription flex justify-center">
+        <p class="mt-10" style="font-family: roboto;">Track the spread of <span class=" font-black" style="color:#EF5261; font-family: Roboto;" >Coronavirus</span> <br> Covid-19 outbreak </p>
+        </div>
+        <div class="p-8 w-full mt-8 chart-container absolute bottom-0" style="background-color:#EDF4F7; border-radius: 60px 60px 0 0 ; height: 50vh;">
+            <canvas class="h-1" id="myChart"></canvas>
+        </div>
+        <footer class="opacity-0 hidden">Created with heart by din</footer>
+        <script src="./app.js"></script>
+</body>
+</html>
