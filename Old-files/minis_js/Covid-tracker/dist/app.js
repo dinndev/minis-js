@@ -17,6 +17,9 @@ const form = document.querySelector('form');
 }
 const getChart = (data) => {
   const ctx = document.querySelector('#myChart').getContext('2d');
+  const container = document.querySelector('.data-container');
+  container.style.opacity = 1; //showing the chart
+   cards(data)  // show supporting details
   if(window.myCharts != undefined)
    window.myCharts.destroy();
    window.myCharts = new Chart(ctx, {
@@ -50,7 +53,26 @@ const getChart = (data) => {
       }
   });
 }
-
+const cards = data => {
+  const card = document.querySelector('.card-container');
+  card.innerHTML  = `<div style="background-color: #EDF4F7;" class="flex justify-between tests
+    p-6 w-full rounded-lg">
+  <div>  
+  <h2 style="font-family:Montserrat" class="text-md">Test</h2>
+  <p class="mt-6">${data.tests}</p>
+  </div>
+  <img class="sm:hidden lg:block" src="./Svg/Tests.svg">
+  </div>
+  <div style="background-color:#EDF4F7" class="flex populations
+  p-6 w-full rounded-lg justify-between">
+  <div>
+  <h2 style="font-family:Montserrat" class="text-md">Populations</h2>
+  <p class="text-lg mt-6">${data.population}</p>
+  </div>
+  <img class="sm:hidden lg:block" src="./Svg/populations.svg">
+  </div>
+  `
+}
 
 
 button.addEventListener('click', track);
