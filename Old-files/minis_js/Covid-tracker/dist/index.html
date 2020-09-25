@@ -9,26 +9,30 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body class="overflow-hidden">
+<body>
     <header>
-         <div class="mt-5 lg:mt-6 lg:ml-6 logo-container flex justify-center sm:justify-start items-center">
+         <div class="mt-5 lg:mt-6 lg:ml-6 logo-container flex justify-center sm:justify-start items-center sm:mt-8">
         <img class="mr-3 sm:ml-5 md:h-12 h-10" src="./Svg/Logo.svg" alt="logo">
         <h2 style="font-family: Montserrat;" class="title sm:text-1xl md:text-2xl text-lg mr-5">Covid tracker</h2>
     </div>
-        <div class="form-container mt-10 flex justify-center right-10">
-            <form class="flex items-center justify-center mt-8 w-full">
-                <input class="country-input rounded-l-lg text-xs px-8 outline-none py-3 ml-5 " style="background-color: #EDF4F7;" name="country" type="text" placeholder="Country">
+        <div class="form-container mt-10 flex justify-center sm:mt-0 sm:absolute sm:right-0 sm:top-0">
+            <form class="flex items-center justify-center mt-8 w-full sm:flex sm:w-2/4 lg:mr-8">
+                <input class="country-input rounded-l-lg text-xs px-8 outline-none py-3 ml-5 sm:px-12" style="background-color: #EDF4F7;" name="country" type="text" placeholder="Country">
                 <button class="submit py-3 px-4 rounded-r-lg text-xs mr-5" style="font-family: Montserrat; background-color: #A3F0DD;" type="submit">Search</button>
             </form>
         </div>
         </header>
-        <div class="discription flex justify-center">
-        <p class="mt-10" style="font-family: roboto;">Track the spread of <span class=" font-black" style="color:#EF5261; font-family: Roboto;" >Coronavirus</span> <br> Covid-19 outbreak </p>
+        <div class="discription flex justify-center sm:justify-start sm:ml-5 lg:ml-12 mx-8 sm:mt-16">
+        <p class="sm:text-lg md:text-xl mt-10 text-center" style="font-family: roboto; color: #6F8090;">Track the spread of <span class=" font-black break-normal" style="color:#EF5261; font-family: Roboto;" >Coronavirus</span> Covid-19 outbreak </p>
         </div>
-        <div class="p-8 w-full mt-8 chart-container absolute bottom-0" style="background-color:#EDF4F7; border-radius: 60px 60px 0 0 ; height: 50vh;">
-            <canvas class="h-1" id="myChart"></canvas>
+        <div class="p-8 w-full mt-8 data-container absolute bottom-0 rounded-t-full md:ml-0 sm:p-4 sm:flex sm:w-full sm:static  opacity-0 sm:justify-between md:p-8" style="height: 55vh;">
+           <div style="background-color:#EDF4F7;" class="p-6 rounded-lg chart-container w-full sm:w-2/3">
+            <canvas id="myChart"></canvas>
+           </div>
+            <div class=" ml-12 items-center sm:w-1/3 hidden sm:flex flex-col justify-between card-container">
+            </div>
         </div>
-        <footer class="opacity-0 hidden">Created with heart by din</footer>
+        <footer class="opacity-25  hidden sm:flex text-sm justify-center mt-12">Created with heart by din</footer>
         <script src="./app.js"></script>
 </body>
 </html>
